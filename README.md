@@ -20,9 +20,10 @@ Log.debug("success!")
 
 ### Installation
 
-Add the Log.swift file to your project.
+1. Add the Log.swift file to your project.
 
-The precompile flag `DEBUG` can be set up under target build settings under 'Swift Compiler - Custom Flags' settings 'Other Swift Flags' using `-DDEBUG` under the Debug configuration. Unless DEBUG flag is present, log() and trace() methods will execute nothing ensuring no logging on a Release (or any non-debug) build.
+2. Add the `DEBUG` flag.
+Open the target build settings, find 'Swift Compiler - Custom Flags' settings and under 'Other Swift Flags' add `-DDEBUG` next to Debug. When DEBUG isn't found, logging won't occur, e.g., in a Release build.
 
 ### Design
 
