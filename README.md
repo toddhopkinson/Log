@@ -8,14 +8,14 @@ To print a trace log:
 
 ```swift
 Log.trace()
-// filename:function():line
+// [TRACE]filename:function():line
 ```
 
 To log a custom message:
 
 ```swift
 Log.debug("success!")
-// filename:function():line success!
+// [DEBUG]filename:function():line success!
 ```
 
 ### Installation
@@ -26,4 +26,9 @@ The precompile flag `DEBUG` can be set up under target build settings under 'Swi
 
 ### Design
 
-Aim: To provide a simple, easy to use debug logger that will . The logs to print to the console precisely when expected were I stepping through code line by line and not printing indeterminately from some background thread. Furthermore, I don't want code executed or parameters evaluated in the log function calls unless it is a DEBUG build.
+Aim: To provide a simple, easy to use debug logger with the following characteristics:
+- The logs print to the console precisely when expected and not indeterminately from some background thread.
+- Code will not be executed nor parameters evaluated in the log function calls unless it is a DEBUG build, i.e., logs will never appear in Release builds.
+- Interfaces are intuitive .
+- Two types of logs can be printed to the console - trace and debug logs.
+- In all cases logs print the filename, function name, and line number of the log invocation.
